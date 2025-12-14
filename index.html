@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CLICKZY</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">CLICKZY</div>
+
+  <div class="nav-right">
+    <nav class="nav-links">
+      <nav class="nav-links">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="cart.html">Cart</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+    </nav>
+
+<a href="login.html" class="signin">Sign In</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <h1 style="color: rgb(255, 101, 40);">NEW COLLECTION</h1>
+    <p>Minimal design. Modern style.</p>
+    <a href="shop.html" class="hero-btn">Shop Now</a>
+  </div>
+</section>
+<section class="collection">
+  <div class="cards">
+    <div class="card">
+  <img src="./imgs/unnamed.jpg">
+  <div class="card-overlay">
+    <h3>Sport Sneakers</h3>
+    <span>1200 EGP</span>
+<button onclick="addToCart('Sport Sneakers', 1200, './unnamed.jpg')">
+  Add to Cart
+</button>
+  </div>
+</div>
+
+    <div class="card">
+  <img src="./imgs/unnamed2.jpg">
+  <div class="card-overlay">
+    <h3>Silver Chain</h3>
+    <span>650 EGP</span>
+<button onclick="addToCart('Silver Chain', 650, './unnamed2.jpg')">
+  Add to Cart
+</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="./imgs/unnamed 3.jpg">
+  <div class="card-overlay">
+    <h3>Training T-Shirt</h3>
+    <span>480 EGP</span>
+<button onclick="addToCart('Training T-Shirt', 480, './unnamed 3.jpg')">
+  Add to Cart
+</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="./imgs/unnamed 4.jpg">
+  <div class="card-overlay">
+    <h3>Sport Hoodie</h3>
+    <span>950 EGP</span>
+<button onclick="addToCart('Sport Hoodie', 950, './unnamed 4.jpg')">
+  Add to Cart
+</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="./imgs/unnamed 5.jpg">
+  <div class="card-overlay">
+    <h3>Performance Tee</h3>
+    <span>520 EGP</span>
+<button onclick="addToCart('Performance Tee', 520, './unnamed 5.jpg')">
+  Add to Cart
+</button>
+  </div>
+</div>
+
+<div class="card">
+  <img src="./imgs/unnamed 6.jpg">
+  <div class="card-overlay">
+    <h3>Running Shoes</h3>
+    <span>1350 EGP</span>
+<button onclick="addToCart('Running Shoes', 1350, './unnamed 6.jpg')">
+  Add to Cart
+</button>
+  </div>
+</div>
+
+</section>
+<section class="home-collections">
+<div class="looking-text">What are you looking for?</div>
+
+  <div class="collection-block">
+    <div class="collection-hero accessories">
+        
+      <div class="collection-text">
+        <span>Trending Now</span>
+        <h2>Accessories Collection</h2>
+        <a href="shop.html">Shop Now</a>
+      </div>
+    </div>
+
+    <div class="collection-grid">
+  <div class="mini-card">
+    <img src="./imgs/GoldMinimalSet_26d6bb25-5d04-47e2-a5f5-05b28a25ac33.webp">
+    <div class="mini-overlay">
+      <h4>Gold Necklace</h4>
+      <span>750 EGP</span>
+      <button onclick="addToCart('Gold Necklace',750,'./GoldMinimalSet_26d6bb25-5d04-47e2-a5f5-05b28a25ac33.webp')">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="mini-card">
+    <img src="./imgs/F04MHE004FAB003-6000-2.webp">
+    <div class="mini-overlay">
+      <h4>Silver Chain</h4>
+      <span>650 EGP</span>
+      <button onclick="addToCart('Silver Chain',650,'./F04MHE004FAB003-6000-2.webp')">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="mini-card">
+    <img src="./imgs/il_fullxfull.3415578348_qyuk_516x700.webp">
+    <div class="mini-overlay">
+      <h4>Men Bracelet</h4>
+      <span>420 EGP</span>
+      <button onclick="addToCart('Men Bracelet',420,'./il_fullxfull.3415578348_qyuk_516x700.webp')">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+
+  <div class="collection-block">
+    <div class="collection-hero tshirts">
+      <div class="collection-text">
+        <span>New Season</span>
+        <h2>Sport T-Shirts</h2>
+        <a href="shop.html">Shop Now</a>
+      </div>
+    </div>
+
+    <div class="collection-grid">
+  <div class="mini-card">
+    <img src="./imgs/71rhG2q0EoL._AC_UY1000_.jpg">
+    <div class="mini-overlay">
+      <h4>Training T-Shirt</h4>
+      <span>480 EGP</span>
+      <button onclick="addToCart('Training T-Shirt',480,'./71rhG2q0EoL._AC_UY1000_.jpg')">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="mini-card">
+    <img src="./imgs/il_570xN.7357209289_7d98.webp">
+    <div class="mini-overlay">
+      <h4>Performance Tee</h4>
+      <span>520 EGP</span>
+      <button onclick="addToCart('Performance Tee',520,'./il_570xN.7357209289_7d98.webp')">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="mini-card">
+    <img src="./imgs/download.jpeg">
+    <div class="mini-overlay">
+      <h4>Sport Shirt</h4>
+      <span>460 EGP</span>
+      <button onclick="addToCart('Sport Shirt',460,'./download.jpeg')">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+
+  <div class="collection-block">
+    <div class="collection-hero shoes">
+      <div class="collection-text">
+        <span>Best Sellers</span>
+        <h2>Sport Shoes</h2>
+        <a href="shop.html">Shop Now</a>
+      </div>
+    </div>
+
+   <div class="collection-grid">
+  <div class="mini-card">
+    <img src="./imgs/1.jpg">
+    <div class="mini-overlay">
+      <h4>Running Shoes</h4>
+      <span>1350 EGP</span>
+      <button onclick="addToCart('Running Shoes',1350,'./1.jpg')">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="mini-card">
+    <img src="./imgs/2.avif">
+    <div class="mini-overlay">
+      <h4>Sport Sneakers</h4>
+      <span>1200 EGP</span>
+      <button onclick="addToCart('Sport Sneakers',1200,'./2.avif')">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="mini-card">
+    <img src="./imgs/3.jpg">
+    <div class="mini-overlay">
+      <h4>Training Shoes</h4>
+      <span>1100 EGP</span>
+      <button onclick="addToCart('Training Shoes',1100,'./3.jpg')">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="contact-title">Contact Us</h2>
+
+    <form class="contact-form">
+      <div class="row">
+
+        <div class="col">
+          <label class="visually-hidden">Name</label>
+          <input type="text" placeholder="Enter Your Name">
+        </div>
+
+        <div class="col">
+          <label class="visually-hidden">Email</label>
+          <input type="email" placeholder="Enter Your Email">
+        </div>
+
+        <div class="col">
+          <label class="visually-hidden">Phone</label>
+          <input type="tel" placeholder="Enter Your Phone">
+        </div>
+
+        <div class="col">
+          <label class="visually-hidden">Age</label>
+          <input type="number" placeholder="Enter Your Age">
+        </div>
+
+        <div class="col">
+          <label class="visually-hidden">Password</label>
+          <input type="password" placeholder="Enter Your Password">
+        </div>
+
+        <div class="col">
+          <label class="visually-hidden">Confirm Password</label>
+          <input type="password" placeholder="ReEnter Password">
+        </div>
+
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">Submit</button>
+      </div>
+    </form>
+
+  </div>
+</section>
+
+
+</section>
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>CLICKZY</h3>
+      <p>
+        Premium sportswear & accessories.  
+        Designed for performance and style.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="shop.html">All Products</a>
+      <a href="shop.html">Shoes</a>
+      <a href="shop.html">T-Shirts</a>
+      <a href="shop.html">Accessories</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <p>Get updates & offers</p>
+      <div class="newsletter">
+        <input type="email" placeholder="Your email">
+        <button>Subscribe</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 CLICKZY. All rights reserved.
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

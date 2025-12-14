@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLICKZY | Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0f1113;
+  --card:#1b1e21;
+  --border:#2a2f33;
+  --text:#ffffff;
+  --muted:#9aa3a8;
+  --accent:#d60000;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:'Inter',sans-serif}
+
+body{
+  background:
+    radial-gradient(1200px 400px at 50% -200px,rgba(214,0,0,.25),transparent),
+    var(--bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.card{
+  width:420px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:36px;
+  box-shadow:0 30px 80px rgba(0,0,0,.6);
+}
+
+.brand{
+  text-align:center;
+  font-size:28px;
+  font-weight:600;
+  letter-spacing:4px;
+  margin-bottom:30px;
+}
+
+h2{
+  font-size:22px;
+  font-weight:500;
+  margin-bottom:24px;
+}
+
+label{
+  display:block;
+  font-size:14px;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  background:#121416;
+  border:1px solid var(--border);
+  border-radius:10px;
+  color:var(--text);
+  margin-bottom:18px;
+}
+
+input:focus{
+  outline:none;
+  border-color:var(--accent);
+}
+
+button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:var(--accent);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+button:hover{
+  filter:brightness(.9);
+  transform:translateY(-2px);
+}
+
+.switch{
+  margin-top:20px;
+  text-align:center;
+  font-size:14px;
+  color:var(--muted);
+}
+
+.switch a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:500;
+}
+
+.msg{
+  margin-top:14px;
+  font-size:14px;
+  text-align:center;
+}
+
+.hidden{display:none}
+.success{color:#2ecc71}
+.error{color:#e74c3c}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="loginBox">
+  <div class="brand">CLICKZY</div>
+  <h2>Sign in</h2>
+
+  <label>Email</label>
+  <input id="loginEmail" type="email">
+
+  <label>Password</label>
+  <input id="loginPassword" type="password">
+
+  <button id="loginBtn">Login</button>
+
+  <div class="switch">
+    Don’t have an account?
+    <a href="#" onclick="showRegister()">Create one</a>
+  </div>
+
+  <div id="loginMsg" class="msg"></div>
+</div>
+
+<div class="card hidden" id="registerBox">
+  <div class="brand">CLICKZY</div>
+  <h2>Create account</h2>
+
+  <label>Username</label>
+  <input id="regName" type="text">
+
+  <label>Email</label>
+  <input id="regEmail" type="email">
+
+  <label>Password</label>
+  <input id="regPassword" type="password">
+
+  <button id="registerBtn">Register</button>
+
+  <div class="switch">
+    Already have an account?
+    <a href="#" onclick="showLogin()">Login</a>
+  </div>
+
+  <div id="regMsg" class="msg"></div>
+</div>
+
+<script>
+function getUsers(){
+  return JSON.parse(localStorage.getItem("users") || "[]")
+}
+function saveUsers(u){
+  localStorage.setItem("users", JSON.stringify(u))
+}
+
+function showRegister(){
+  loginBox.classList.add("hidden")
+  registerBox.classList.remove("hidden")
+}
+
+function showLogin(){
+  registerBox.classList.add("hidden")
+  loginBox.classList.remove("hidden")
+}
+
+registerBtn.onclick = () => {
+  const name = regName.value.trim()
+  const email = regEmail.value.trim()
+  const pass = regPassword.value
+
+  if(!name || !email || pass.length < 6){
+    regMsg.className="msg error"
+    regMsg.innerText="Invalid data"
+    return
+  }
+
+  const users = getUsers()
+  if(users.find(u => u.email === email)){
+    regMsg.className="msg error"
+    regMsg.innerText="Email already exists"
+    return
+  }
+
+  users.push({name,email,password:pass})
+  saveUsers(users)
+
+  regMsg.className="msg success"
+  regMsg.innerText="Account created successfully"
+
+  setTimeout(showLogin,800)
+}
+
+loginBtn.onclick = () => {
+  const email = loginEmail.value.trim()
+  const pass = loginPassword.value
+
+  const users = getUsers()
+  const user = users.find(u => u.email===email && u.password===pass)
+
+  if(user){
+    localStorage.setItem("currentUser", JSON.stringify(user))
+    loginMsg.className="msg success"
+    loginMsg.innerText="Welcome back "
+    setTimeout(()=> location.href="index.html",900)
+  } else {
+    loginMsg.className="msg error"
+    loginMsg.innerText="Invalid email or password"
+  }
+}
+</script>
+
+</body>
+</html>

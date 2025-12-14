@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CLICKZY | Checkout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">CLICKZY</div>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="cart.html">Cart</a>
+  </nav>
+</header>
+
+<main class="checkout-container">
+
+<section class="billing">
+<h2>Billing address</h2>
+
+<div class="row">
+  <div class="field">
+    <label>First name</label>
+    <input type="text" name="firstName">
+    <div class="error-text">First name is required</div>
+  </div>
+  <div class="field">
+    <label>Last name</label>
+    <input type="text" name="lastName">
+    <div class="error-text">Last name is required</div>
+  </div>
+</div>
+
+<div class="field">
+  <label>Username</label>
+  <input type="text" name="username" placeholder="@username">
+  <div class="error-text">Invalid username</div>
+</div>
+
+<div class="field">
+  <label>Email</label>
+  <input type="email" name="email" placeholder="you@example.com">
+  <div class="error-text">Enter a valid email</div>
+</div>
+
+<div class="field">
+  <label>Address</label>
+  <input type="text" name="address" placeholder="1234 Main St">
+  <div class="error-text">Address is required</div>
+</div>
+
+<div class="row">
+  <div class="field">
+    <label>Zip</label>
+    <input type="text" name="zip">
+    <div class="error-text">Invalid zip</div>
+  </div>
+</div>
+
+<hr>
+
+<h3>Payment</h3>
+
+<div class="row">
+  <div class="field">
+    <label>Name on card</label>
+    <input type="text" name="cardName">
+    <div class="error-text">Invalid name</div>
+  </div>
+  <div class="field">
+    <label>Card number</label>
+    <input type="text" name="cardNumber">
+    <div class="error-text">Must be 16 digits</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="field">
+    <label>Expiration</label>
+    <input type="text" name="expiry" placeholder="MM/YY">
+    <div class="error-text">Invalid format</div>
+  </div>
+  <div class="field">
+    <label>CVV</label>
+    <input type="text" name="cvv">
+    <div class="error-text">Invalid CVV</div>
+  </div>
+</div>
+
+<button id="confirmOrder" class="confirm-btn">Confirm Order</button>
+</section>
+
+<aside class="summary">
+  <h3>Your cart</h3>
+  <div id="checkoutItems"></div>
+  <div class="summary-total">
+    <span>Total</span>
+    <span id="checkoutTotal">0 EGP</span>
+  </div>
+</aside>
+
+</main>
+
+<script src="checkout.js"></script>
+</body>
+</html>
